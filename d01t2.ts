@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 
-export function solveD01T1(input: string): string {
+export function solveD01T2(input: string): string {
   const lines = input
     .split("\n")
     .map((line) => line.trim())
@@ -49,5 +49,5 @@ export function solveD01T1(input: string): string {
 // TODO: if file is run directly
 if (true) {
   const input = readFileSync("d01.txt");
-  console.log("Day 01 - Task 2:", solveD01T1(input.toString()));
+  console.log("Day 01 - Task 2:", solveD01T2(input.toString()));
 }
