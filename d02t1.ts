@@ -7,7 +7,7 @@ function isInvalid(id: string): boolean {
   return false;
 }
 
-export function solveD02T1(input: string): string {
+export function solveD02T1(input: string, debug = false): string {
   const pairs = input
     .split(",")
     .map((pair) => pair.split("-") as [firstId: string, lastId: string]);
@@ -18,7 +18,7 @@ export function solveD02T1(input: string): string {
     let id = firstIdNum;
     while (id <= lastIdNum) {
       if (isInvalid(id.toString())) {
-        console.debug(`Found invalid id: ${id}`);
+        if (debug) console.debug(`Found invalid id: ${id}`);
         result += id;
       }
       id += 1;
@@ -30,5 +30,5 @@ export function solveD02T1(input: string): string {
 // TODO: if file is run directly
 if (true) {
   const input = readFileSync("d02.txt", "utf-8");
-  console.log("Day 02 - Task 1:", solveD02T1(input.toString()));
+  console.log("Day 02 - Task 1:", solveD02T1(input, true));
 }

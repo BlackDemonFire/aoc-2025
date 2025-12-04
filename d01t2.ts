@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 
-export function solveD01T2(input: string): string {
+export function solveD01T2(input: string, debug = false): string {
   const lines = input
     .split("\n")
     .map((line) => line.trim())
@@ -19,11 +19,11 @@ export function solveD01T2(input: string): string {
       if (move >= 100) {
         move -= 100;
         result += 1;
-        console.log("overturn R");
+        if (debug) console.log("overturn R");
       } else if (move < -100) {
         move += 100;
         result += 1;
-        console.log("overturn L");
+        if (debug) console.log("overturn L");
       } else {
         dial += move;
         if ((dial === 0 || dial >= 100 || dial < 0) && prev !== 0) {
@@ -31,16 +31,17 @@ export function solveD01T2(input: string): string {
         }
         if (dial < 0) {
           dial += 100;
-          console.log("wrap around L");
+          if (debug) console.log("wrap around L");
         } else if (dial >= 100) {
           dial -= 100;
-          console.log("wrap around R");
-        } else console.log("hit 0");
+          if (debug) console.log("wrap around R");
+        } else if (debug) console.log("hit 0");
         move = 0;
       }
-      console.log(
-        `Line: ${line}, Move: ${move}, Dial: ${dial}, Result: ${result}`,
-      );
+      if (debug)
+        console.log(
+          `Line: ${line}, Move: ${move}, Dial: ${dial}, Result: ${result}`,
+        );
     }
   }
   return result.toString();
@@ -49,5 +50,5 @@ export function solveD01T2(input: string): string {
 // TODO: if file is run directly
 if (true) {
   const input = readFileSync("d01.txt");
-  console.log("Day 01 - Task 2:", solveD01T2(input.toString()));
+  console.log("Day 01 - Task 2:", solveD01T2(input.toString(), true));
 }

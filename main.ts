@@ -5,6 +5,8 @@ import { solveD02T1 } from "./d02t1.ts";
 import { solveD02T2 } from "./d02t2.ts";
 import { solveD03T1 } from "./d03t1.ts";
 import { solveD03T2 } from "./d03t2.ts";
+import { solveD04T1 } from "./d04t1.ts";
+import { solveD04T2 } from "./d04t2.ts";
 
 console.log("Running Day 01 with demo input:");
 
@@ -49,4 +51,19 @@ if (existsSync("d03.txt")) {
   console.log("Day 03 - Task 2:", solveD03T2(input));
 } else {
   console.log("No input file found for Day 03. (d03.txt)");
+}
+
+console.log("\nRunning Day 04 with demo input:");
+
+const demoInput04 = readFileSync("d04-demo.txt", "utf-8");
+
+console.log("Day 04 - Task 1 (Demo):", solveD04T1(demoInput04));
+console.log("Day 04 - Task 2 (Demo):", solveD04T2(demoInput04));
+
+if (existsSync("d04.txt")) {
+  const input = readFileSync("d04.txt", "utf-8");
+  console.log("Day 04 - Task 1:", solveD04T1(input));
+  console.log("Day 04 - Task 2:", solveD04T2(input));
+} else {
+  console.log("No input file found for Day 04. (d04.txt)");
 }
