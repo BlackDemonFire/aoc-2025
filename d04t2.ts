@@ -54,8 +54,7 @@ export function solveD04T2(input: string): string {
   return result.toString();
 }
 
-// TODO: if file is run directly
-if (true) {
+if (import.meta.main) {
   const input = readFileSync("d04.txt", "utf-8");
   console.log("Day 04 - Task 2:", solveD04T2(input));
 }

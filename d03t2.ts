@@ -26,8 +26,7 @@ export function solveD03T2(input: string, debug = false): string {
   return result.toString();
 }
 
-// TODO: if file is run directly
-if (true) {
+if (import.meta.main) {
   const input = readFileSync("d03.txt", "utf-8");
   console.log("Day 03 - Task 2:", solveD03T2(input, true));
 }

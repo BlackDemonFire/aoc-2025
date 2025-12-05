@@ -32,8 +32,7 @@ export function solveD01T1(input: string, debug = false): string {
   return result.toString();
 }
 
-// TODO: if file is run directly
-if (true) {
+if (import.meta.main) {
   const input = readFileSync("d01.txt");
   console.log("Day 01 - Task 1:", solveD01T1(input.toString(), true));
 }
