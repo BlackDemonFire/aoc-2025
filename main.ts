@@ -9,6 +9,10 @@ import { solveD04T1 } from "./d04t1.ts";
 import { solveD04T2 } from "./d04t2.ts";
 import { solveD05T1 } from "./d05t1.ts";
 import { solveD05T2 } from "./d05t2.ts";
+import { solveD06T1 } from "./d06t1.ts";
+import { solveD06T2 } from "./d06t2.ts";
+import { solveD07T1 } from "./d07t1.ts";
+import { solveD07T2 } from "./d07t2.ts";
 
 console.log("Running Day 01 with demo input:");
 
@@ -83,4 +87,34 @@ if (existsSync("d05.txt")) {
   console.log("Day 05 - Task 2:", solveD05T2(input));
 } else {
   console.log("No input file found for Day 05. (d05.txt)");
+}
+
+console.log("\nRunning Day 06 with demo input:");
+
+const demoInput06 = readFileSync("d06-demo.txt", "utf-8");
+
+console.log("Day 06 - Task 1 (Demo):", solveD06T1(demoInput06));
+console.log("Day 06 - Task 2 (Demo):", solveD06T2(demoInput06));
+
+if (existsSync("d06.txt")) {
+  const input = readFileSync("d06.txt", "utf-8");
+  console.log("Day 06 - Task 1:", solveD06T1(input));
+  console.log("Day 06 - Task 2:", solveD06T2(input));
+} else {
+  console.log("No input file found for Day 06. (d06.txt)");
+}
+
+console.log("\nRunning Day 07 with demo input:");
+
+const demoInput07 = readFileSync("d07-demo.txt", "utf-8");
+
+console.log("Day 07 - Task 1 (Demo):", solveD07T1(demoInput07));
+console.log("Day 07 - Task 2 (Demo):", solveD07T2(demoInput07));
+
+if (existsSync("d07.txt")) {
+  const input = readFileSync("d07.txt", "utf-8");
+  console.log("Day 07 - Task 1:", solveD07T1(input));
+  console.log("Day 07 - Task 2:", solveD07T2(input));
+} else {
+  console.log("No input file found for Day 07. (d06.txt)");
 }
